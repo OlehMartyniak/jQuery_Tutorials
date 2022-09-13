@@ -1,0 +1,26 @@
+$("#btnFadeOut").click( ()=> $("#box").fadeOut() ) - дозволить тексту повільно зникати; також можна 
+    додати в fadeOut час і колбек ф-цію, наприклад щоб змінити назву кнопки
+
+$("#btnFadeIn").click( ()=> $("#box").fadeIn() ) - навпаки дозволяє висвітлити зниклу картинку, також 
+    приймає час та колбек
+
+$("#btnFadeTog").click( ()=> $("#box").fadeToggle() ) - зникає/зʼявляється картинка
+
+$("#btnSlideUp").click( ()=> $("#box").slideUp() ) - дозволяє плавно ховати блок
+$("#btnSlideDown").click( ()=> $("#box").slideDown() ) - дозволяє плавно виводити блок
+$("#btnSlideTog").click( ()=> $("#box").slideToggle() ) - дозволяє плавно ховати/виводити блок
+
+$("#moveLeft").click( ()=> $("#box2").animate({left: 0, height: 100, width: 100}) ) - дозволяє
+    посунути елемент вліво на вказану відстань
+$("#moveRight").click( ()=> $("#box2").animate({left: 500, height: 200, width: 200}) ) - дозволяє
+    посунути елемент вправо на вказану відстань (і змінити інші параметри за необхідності)
+
+$("#moveAround").click( ()=> {
+    let box = $("#box2");
+    box.animate({left: 300});
+    box.animate({top: 300});
+    box.animate({top: 300,left:0});  
+    box.animate({top: 0,left: 0}); 
+});
+
+Елемент зробить рух проти годинникової стрілки

@@ -1,0 +1,19 @@
+$("p.parag2").css({background:"red",color:"white"}) - щоб додавати кілька css 
+
+("p.parag1").addClass("myClass") - щоб додавати клас
+
+$("p.parag1").removeClass("myClass") - щоб зняти клас
+
+$("#btn1").click( ()=> $("p.parag2").toggleClass("myClass") ) - буде додавати і знімати клас для параграфа
+при кліку на кнопку
+
+$("ul").append("<li> Append List Item <li/>") - додати елемент li в кінець ul
+$("ul").prepend("<li> Append List Item <li/>") - додати елемент li на початок ul
+
+$("span").appendTo(".parag1") - додати span в параграф з класом parag1
+$("span").prependTo(".parag2") - додати span перед  параграфом з класом parag2
+
+$("ul").before("<h4>Hello World<h4/>") - додає h4 елемент перед ul
+$("ul").after("<h4>Hello World<h4/>") - додає h4 елемент після ul
+
+$("ul").empty() - спорожнить список ul 

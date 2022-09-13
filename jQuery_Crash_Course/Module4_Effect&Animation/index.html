@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://code.jquery.com/jquery-3.6.1.min.js"></script>
+    <link rel="stylesheet" href="style.css " />
+    <title>Module4 Effects & Animation</title>
+</head>
+<body>
+    <header>
+        <h1>jQuery Crash Course | Effects & Animate</h1>
+    </header>
+    <div id="container">
+        <button id="btnFadeOut">Fade Out</button>
+        <button id="btnFadeIn">Fade In</button>
+        <button id="btnFadeTog">Fade Toggle</button>
+        <hr>
+        <button id="btnSlideUp">Slide Up</button>
+        <button id="btnSlideDown">Slide Down</button>
+        <button id="btnSlideTog">Slide Togglle</button>
+
+        <div id="box"><h1>Hello World</h1></div>
+
+        <hr>
+        <button id="moveLeft">Move Left</button>
+        <button id="moveRight">Move Right</button>
+        <button id="moveAround">Move Around</button>
+        <div id="box2"></div>
+    </div>
+
+    <script>
+        $("#btnFadeOut").click( ()=> $("#box").fadeOut() );
+        $("#btnFadeIn").click( ()=> $("#box").fadeIn() );
+        $("#btnFadeTog").click( ()=> $("#box").fadeToggle() );
+
+        $("#btnSlideUp").click( ()=> $("#box").slideUp() );
+        $("#btnSlideDown").click( ()=> $("#box").slideDown() );
+        $("#btnSlideTog").click( ()=> $("#box").slideToggle() );
+
+        $("#moveLeft").click( ()=> $("#box2").animate({left: 0, height: 100, width: 100}) );
+        $("#moveRight").click( ()=> $("#box2").animate({left: 500, height: 200, width: 200}) );
+        $("#moveAround").click( ()=> {
+            let box = $("#box2");
+            box.animate({left: 300});
+            box.animate({top: 300});
+            box.animate({top: 300,left:0});  
+            box.animate({top: 0,left: 0}); 
+        });
+    </script>
+</body>
+</html>
