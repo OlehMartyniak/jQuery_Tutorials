@@ -1,0 +1,41 @@
+Щоб підключити бібліотеку jQuery, можна:
+
+    - встановити з доп. npm:
+        npm install jquery
+
+    - підключити скрипт в <head/> в index.html:
+        <script src="https://code.jquery.com/jquery-3.6.1.min.js"></script>
+
+Основи jQuery (селектори):
+
+$("h1").hide() - звертаємось до всіх тегів h1 і приховуємо їх
+
+$("h1#heading1").hide() - звертаємось до тегів h1 з id "heading1"   
+$("#heading1").hide() - або напряму звертаємось до id
+
+$("h1.heading2").hide() - звертаємось до тегів h1 з class "heading2"
+$(".heading2").hide() - звертаємось до елементів з class "heading2
+
+$("p span").css("color","red") - звертаємось до всіх тегів <span> в елементах <p> і задаємо їм колір 
+    тексту (працюватиме тільки для span, які всередині p)
+
+$("ul#list li:first").css("color","red") - перший li в ul з класом "list" матиме колір тексту червоний
+$("ul#list li:last").css("color","red") - останній li в ul з класом "list" матиме колір тексту червоний
+
+$("ul#list li:even").css("background","lavender") - кожен непарний елемент li в ul з класом "list" 
+    матиме колір фону lavender
+
+$("ul#list li:odd").css("background","lightcyan") - кожен парний елемент li в ul з класом "list" 
+    матиме колір фону lightcyan
+
+$("ul#list li:nth-child(3n)") - звертаємо до кожного третього елемента списку
+
+$(":button").hide() - звертаємось до всіх інпутів з типом button (<input type="button" value="Button">)
+$(":submit").hide() - звертаємось до всіх інпутів з типом submit (<input type="submit" value="Submit">)
+$(":text").hide() - звертаємось до всіх інпутів з типом text (<input type="text")
+
+$("[href]").css("color","green") - звертаємось до всіх елементів,які мають href
+$("a[href='https://www.yahoo.com']").css("color","red") - звертаємось до конкретного елемента <a>, з
+    посиланням на "yahoo"
+
+
