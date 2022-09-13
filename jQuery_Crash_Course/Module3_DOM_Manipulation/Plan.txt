@@ -1,3 +1,4 @@
+
 $("p.parag2").css({background:"red",color:"white"}) - щоб додавати кілька css 
 
 ("p.parag1").addClass("myClass") - щоб додавати клас
