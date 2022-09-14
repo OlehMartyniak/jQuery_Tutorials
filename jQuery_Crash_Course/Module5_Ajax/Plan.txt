@@ -1,0 +1,57 @@
+Наприклад у нас є сторінка test.html Для того щоб завантажити її вміст з допомогою AJAX 
+(Asynchronous JavaScript and XML), використовуючи jQuery використаємо load():
+
+$("#result").load("test.html")
+
+Або більш розгорнутий запит, з alert якщо запит успішний або alert з помилкою, якщо неуспішний:
+
+        $("#result").load("test.html", (responseTxt,statusTxt,xhr)=> {
+            if(statusTxt == "success") {
+                alert ("It went well")
+            } else if (statusTxt == "error") {
+                alert("Error: "+xhr.statusTxt)
+            }
+        })
+
+Схожий спосіб отримання даних, однак з допомогою get запиту:
+
+$.get("test.html", (data)=> $("#result").html(data))
+
+Створимо файл users.json і звернемось до нього з допомогою getJSON, пройдемось по даним (data) циклом
+each і виведемо name кожного юзера в <li>:
+
+        $.getJSON("users.json", (data)=> {
+            $.each(data, (i, user)=> {
+                $("ul#users").append("<li>"+user.name+"<li/>")
+            })
+        })
+
+Зробимо схожий запит на масив json на фейковому АРІ, однак з допомогою ajax і методом map виведемо name
+i email:
+
+        $.ajax({
+            method:"GET",
+            url:"https://jsonplaceholder.typicode.com/users",
+            dataType: "json"
+        }).done( (data)=> {
+            console.log(data);
+            $.map(data, (user,i)=> {
+                $("#result").append("<h3>"+user.name+"<h3/><p>"+user.email+"<p/><br>")
+            })
+        } )
+
+Метод POST з допомогою jQuery (створимо форму в html) :
+
+        $("#postForm").submit(function(e){
+            e.preventDefault();
+
+            let title = $("#title").val();
+            let body = $("#body").val();
+            let url = $(this).attr("action");
+
+            $.post(url, {title:title, body:body})
+                .done(function(data){
+                    console.log("Post Saved");
+                    console.log(data)
+                })
+        })
